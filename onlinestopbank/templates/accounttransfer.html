@@ -1,0 +1,21 @@
+{% extends 'main.html' %} {% block body_block %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="shadow p-3 mb-5 bg-white rounded" style="margin: 50px; width: 500; height: 300; text-align: center; color: rgb(173, 61, 61);">
+        <h2 style="color: gray;">Transfer Money</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <button type="submit" class="btn btn-success">Transfer</button>
+        </form>
+    </div>
+</body>
+</html>
+{% endblock %}

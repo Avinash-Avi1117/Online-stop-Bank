@@ -1,0 +1,17 @@
+{% extends 'main.html' %} {% block body_block %} {% load static %}
+<div>
+    <div class="shadow p-3 mb-5 bg-white rounded" style="margin: 50px; width: 500; height: 300; text-align: center; color: gray;">
+    <form method="post">
+        <h3 style="color: gray; text-align: center;">Pay the Bills</h3>
+        <br>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <br>
+        <button type="submit" class="btn btn-success">Pay Bill</button>
+    </form>
+    </div>
+    {% if error %}
+        <p style="color:red; text-align: center;">{{ error }}</p>
+    {% endif %}
+</div>
+{% endblock %}
